@@ -30,10 +30,10 @@ chown -R "$username:$username" "/home/$username"
 
 # Installing sugar-candy dependencies
 nala install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
-# Installing Essential Programs 
-nala install feh bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
+# Installing Essential Programs
+nala install feh bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip wget -y
 # Installing Other less important Programs
-nala install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji sddm variety -y
+nala install stacer firefox thunderbird neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji sddm variety -y
 
 # Download Nordic Theme
 cd /usr/share/themes/ || exit
@@ -62,11 +62,11 @@ cd "$builddir" || exit
 rm -rf Nordzy-cursors
 
 # Install brave-browser
-sudo nala install apt-transport-https curl -y
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo nala update
-sudo nala install brave-browser -y
+# sudo nala install apt-transport-https curl -y
+# sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+# echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+# sudo nala update
+# sudo nala install brave-browser -y
 
 # Enable graphical login and change target from CLI to GUI
 tar -xzvf slice.tar.gz -C /usr/share/sddm/themes
